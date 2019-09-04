@@ -1,0 +1,24 @@
+
+# Created by https://www.gitignore.io/api/code,executable
+# Edit at https://www.gitignore.io/?templates=code,executable
+
+### Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### Executable ###
+*.app
+*.bat
+*.cgi
+*.com
+*.exe
+*.gadget
+*.jar
+*.pif
+*.vb
+*.wsf
+
+# End of https://www.gitignore.io/api/code,executable
