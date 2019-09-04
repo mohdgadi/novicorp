@@ -1,0 +1,42 @@
+[
+  {
+    "name": "VOUCHER",
+    "pricings": [
+      {
+        "minimumQuantity": 3,
+        "appliedToAll": false,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 1,
+        "appliedToAll": false,
+        "price": 5
+      }
+    ]
+  },
+  {
+    "name": "TSHIRT",
+    "pricings": [
+      {
+        "minimumQuantity": 3,
+        "appliedToAll": true,
+        "price": 19
+      },
+      {
+        "minimumQuantity": 1,
+        "appliedToAll": false,
+        "price": 20
+      }
+    ]
+  },
+  {
+    "name": "MUG",
+    "pricings": [
+      {
+        "minimumQuantity": 1,
+        "appliedToAll": false,
+        "price": 7.5
+      }
+    ]
+  }
+]
