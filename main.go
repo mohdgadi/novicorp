@@ -1,28 +1,31 @@
 package main
+
 import (
 	"fmt"
-	"io/ioutil"
-	"encoding/json"
-	"./item"
+	"novicorp/item"
+	"novicorp/transaction"
 )
 
-func main(){
-	fmt.Println("hello world")
-	getPricings()
-}
+func main() {
+	var (
+		itemsMap map[string]item.Item
+		err      error
+	)
 
-func getPricings() {
-	data, err := ioutil.ReadFile("./items.json")
-	var items []item.Item
-	err = json.Unmarshal(data, &items)
-	fmt.Println(err, items)
-}
-
-func calculate(itemNames []string) (total float64) {
-	itemNamesQuantityMap := make(map [string]int)
-	for _,name := range itemNames {
-		itemNamesQuantityMap[name]++
+	if itemsMap, err = item.GetItemsData(); err != nil {
+		panic(err.Error())
 	}
 
+	tr := transaction.New(itemsMap)
+	if err = tr.ScanShoppingist(); err != nil {
+		panic(err)
+	}
+
+	var cost float64
+	if cost, err = tr.CalculateCost();err!=nil{
+		panic(err)
+	}
+
+	fmt.Println("Total Cost for transaction is:", cost)
 	return
 }
